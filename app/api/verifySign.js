@@ -85,7 +85,7 @@ module.exports = {
 					auth: true,
 					id: req.body.id,
 					accessToken: token,
-					message: "Error",
+					message: "Welcome to apps !",
 					errors: null
 				});
 			}).catch(err => {

@@ -5,7 +5,8 @@
     "database": "yukchat",
     "host": "localhost",
     "port" : "7117",
-    "dialect": "postgres"
+    "dialect": "postgres",
+    "logging" : false
   },
   "test": {
     "username": "postgres",
@@ -13,7 +14,8 @@
     "database": "yukchat",
     "host": "localhost",
     "port" : "7117",
-    "dialect": "postgres"
+    "dialect": "postgres",
+    "logging" : false
   },
   "production": {
     "username": "postgres",
@@ -21,6 +23,7 @@
     "database": "yukchat",
     "host": "localhost",
     "port" : "7117",
-    "dialect": "postgres"
+    "dialect": "postgres",
+    "logging" : false
   }
 }
