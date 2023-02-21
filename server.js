@@ -43,16 +43,16 @@ db.sequelize.sync().then(() => {
 function create_roles(){
 	db.Role.create({
 		id: 1,
-		name: "USER"
+		name_role: "USER"
 	});
 	
 	db.Role.create({
 		id: 2,
-		name: "ADMIN"
+		name_role: "ADMIN"
 	});
 	
 	db.Role.create({
 		id: 3,
-		name: "PM"
+		name_role: "PM"
 	});
 }
