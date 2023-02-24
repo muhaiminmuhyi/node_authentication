@@ -1,6 +1,7 @@
 const verifySignUpController = require('../api').verifySignUp;
 const verifySignController = require('../api').verifySign;
 const statusController = require('../api').status;
+const chatController = require('../api').chat;
 const verifyJwtTokenController = require('../api').verifyJwtToken;
 
 module.exports = function (app) {
@@ -16,6 +17,7 @@ module.exports = function (app) {
 
 	//Status
 	app.get('/api/status',
+		[verifyJwtTokenController.verifyToken],
 		statusController.list);
 	app.get('/api/statususer',
 		[verifyJwtTokenController.verifyToken],
@@ -40,4 +42,31 @@ module.exports = function (app) {
 			verifyJwtTokenController.isAdmin
 		],
 		statusController.delete);
+
+	
+	
+	// Message Chat
+	app.get('/api/chat/:id',
+	[
+		verifyJwtTokenController.verifyToken, 
+		verifyJwtTokenController.isAdmin
+	],
+	chatController.getById
+	);
+
+	app.post('/api/chat/',
+	[
+		verifyJwtTokenController.verifyToken,
+		verifyJwtTokenController.isAdmin
+	],
+	chatController.add
+	);
+
+	app.delete('/api/chat/:id',
+	[
+		verifyJwtTokenController.verifyToken,
+		verifyJwtTokenController.isAdmin
+	],
+	chatController.delete
+	);
 }

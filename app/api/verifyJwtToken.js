@@ -6,6 +6,12 @@ module.exports = {
 	verifyToken(req, res, next) {
 		let tokenHeader = req.headers['x-access-token'];
 
+		if (tokenHeader == null) {
+			res.status(500).send({
+				message: "Something went wrong"
+			})
+		}
+
 		if (tokenHeader.split(' ')[0] !== 'Bearer') {
 			return res.status(500).send({
 				auth: false,

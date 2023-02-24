@@ -1,0 +1,29 @@
+{
+  "development": {
+    "dialect": "postgres",
+    "username" : "postgres",
+    "password" : "mumu",
+    "database" : "yukchat",
+    "host" : "localhost",
+    "port" : "7117",
+    "logging" : false
+  },
+  "production": {
+    "dialect": "postgres",
+    "username" : "postgres",
+    "password" : "mumu",
+    "database" : "yukchat",
+    "host" : "localhost",
+    "port" : "7117",
+    "logging" : false
+  },
+  "test": {
+    "dialect": "postgres",
+    "username" : "postgres",
+    "password" : "mumu",
+    "database" : "yukchat",
+    "host" : "localhost",
+    "port" : "7117",
+    "logging" : false
+  }
+}
