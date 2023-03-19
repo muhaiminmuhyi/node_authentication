@@ -1,10 +1,26 @@
 version: '3.7'
+
 services:
-  web:
-    image: nodejs
+
+  api:
+    container_name: api
+    restart: always
     build: .
     ports:
       - "8003:8003"
-    db:
-      image: postgres:latest
-      ports: "7117:5432"
+    depends_on:
+      - db
+    volumes:
+      - .:/usr/src/app
+  
+  db:
+    container_name: postgres
+    image: postgres:latest
+    ports: 
+    - "7118:5432"
+    environment:
+      POSTGRES_DB: 'yukchat'
+      POSTGRES_USER: 'postgres'
+      POSTGRES_PASSWORD: 'postgres'
+    volumes:
+    - "./pgdata:/var/lib/postgresql/data"
