@@ -8,5 +8,5 @@ RUN npm install
 
 COPY . .
 
-EXPOSE 8080
+EXPOSE 4000
 CMD [ "npx", "nodemon", "server.js" ]
