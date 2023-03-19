@@ -1,0 +1,10 @@
+version: '3.7'
+services:
+  web:
+    image: nodejs
+    build: .
+    ports:
+      - "8003:8003"
+    db:
+      image: postgres:latest
+      ports: "7117:5432"
