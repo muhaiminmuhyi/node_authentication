@@ -3,7 +3,7 @@ version: '3.7'
 services:
 
   api:
-    container_name: api
+    container_name: login-services
     restart: always
     build: .
     ports:

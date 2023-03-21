@@ -11,26 +11,6 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      User.belongsToMany(models.Role, {
-        through: 'user_roles',
-        foreignKey: 'userId',
-        otherKey: 'roleId'
-      });
-  
-      User.hasMany(models.Status, {
-        foreignKey: 'user_id',
-        as: 'statuses',
-      });
-
-      User.hasMany(models.Chat, {
-        foreignKey: 'id_user',
-        as: 'chats'
-      });
-
-      User.hasMany(models.Chat, {
-        foreignKey: 'toId_user',
-        as: 'chatsTo'
-      });
     }
   }
   User.init({
